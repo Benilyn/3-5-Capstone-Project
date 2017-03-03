@@ -17,10 +17,6 @@ body {
   display: none;
 }
 
-.search-button {
-  
-}
-
 .click:hover {
   color: lightgray;
   cursor: pointer;
