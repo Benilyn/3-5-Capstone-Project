@@ -1,0 +1,27 @@
+  <!DOCTYPE html>
+
+  <head>
+    <title>Front-End Capstone Project</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher|Playball" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+  </head>
+
+  <body>
+
+    <button class="search-button transparent">Find my coffee</button> 
+    
+    <div id="search-results"  class="transparent hide">
+      <div id="place-details" class="inline"></div> <!-- place details -->
+      <div id="map" class="inline"></div> <!-- map -->
+    </div>  <!-- search results -->
+
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsTceI0v76mesiBDi3kCnhi0r4-Q95MjY&libraries=places&callback=initMap" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+  </html>
