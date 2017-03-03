@@ -1,14 +1,15 @@
 
+$(document).ready(function(){
+  $('.logo').click(function(event){
+    $(this).removeClass('click');
+    $('#search-results').removeClass('hide');
+    initMap();
+  });   //click function
+}); //document.ready
 
-$('.search-button').click(function(event){
-	event.preventDefault();
-	$(this).addClass('hide');
-	$('#search-results').removeClass('hide');
-
-});   //click function
-
-
-
+function showUI(){
+  $('.search-button').removeClass('hide');
+}   //showUI
 
 var map;
 var infowindow;
@@ -22,7 +23,6 @@ function initMap() {
       zoom: 13
     }); //map
 
-    
     var service = new google.maps.places.PlacesService(map);
     var query = {
       location: currentLocation,
@@ -32,90 +32,46 @@ function initMap() {
     
     service.textSearch(query, callback); //(textSearch)
 
-  function callback(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      var coffeeShops = results.slice(0, 5);
-      for (var i = 0; i < results.length; i++) {
-      coffeeShops.forEach(createMarker);
-      // create function for div to show results details
-      }   //for
-    }   //if
-  }   //callback function
-
-function createMarker(place) {
-  var placeLoc = place.geometry.location;
-  //var markerLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  //var labelIndex = 0;
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location,
-    //label: markerLabels[labelIndex++ % labels.length],
-  });   //var marker
-
-  google.maps.event.addListener(marker, 'click', function() {
-    console.log(place);
-    var infowindow = new google.maps.InfoWindow();
-    infowindow.setContent(place.name);
-    infowindow.open(map, this);
-
-    service.getDetails(place, function(details, status){
+    function callback(results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        infowindow.setContent(details.name);
-        $('#place-details').append(
-          '<ul>' + details.name + '</ul>' + 
-          '<li>' + details.vicinity + '</li>' +
-          '<li>' + details.formatted_phone_number + '</li>');
-      }
+        var coffeeShops = results.slice(0, 5);
+        for (var i = 0; i < results.length; i++) {
+          coffeeShops.forEach(createMarker);
+        }   //for
+      }   //if
+    }   //callback function
 
-    });   //getDetails
-  });   //addListener
-}   //createMarker function
+    var infoWINDOW;
+    function createMarker(place) {
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location,
+      });   //var marker
 
-/*
+      google.maps.event.addListener(marker, 'click', function() {
+        if (infoWINDOW) { infoWINDOW.close(); }
+        var infowindow = new google.maps.InfoWindow();
+        infoWINDOW = infowindow;
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
 
-//radar search - search within specified radius
-
-service.getDetails({
-          placeId: place_id
-        }, function(place, status) {
+        service.getDetails(place, function(details, status){
           if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                'Place ID: ' + place.place_id + '<br>' +
-                place.formatted_address + '</div>');
-              infowindow.open(map, this);
-            });
-          }
-        });
-*/
-
+            infowindow.setContent(details.name);
+            $('#place-details').addClass('detail-info');
+            $('#place-details').html(
+              '<div class="place-name">' + details.name + '</div>' + 
+              '<div class="place-info">' + details.vicinity + '</div>' +
+              '<div class="place-info">' + details.formatted_phone_number + '</div>'
+            );   // .html
+          }  //if
+        });   //getDetails
+      });   //addListener
+    }   //createMarker function
 	});   //getCurrentPosition 
 }   //initMap
 
 
 
-
-
-
-
-/* 
-	SEARCH FOR PLACE DETAILS
-service = new google.maps.places.PlacesService(map);
-service.getDetails(request, callback);
-
-	geocoding services
-	- create var to get location (use placeID geocoder)
-	- once location is identified, search details on restaurant
-
-
-
-
-	SEARCH NEARBY PLACES
-service = new google.maps.places.PlacesService(map);
-service.nearbySearch(request, callback);
-*/
 
