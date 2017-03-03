@@ -11,15 +11,15 @@
 
   <body>
 
-    <button class="search-button transparent">Find my coffee</button> 
+    <p class="logo transparent click">Find my coffee</p> 
     
     <div id="search-results"  class="transparent hide">
-      <div id="map" class="inline"></div> <!-- map -->
-      <div id="place-details" class="inline"></div> <!-- place details -->
+      <div id="map" class="block"></div> <!-- map -->
+      <div id="place-details" class="block"></div> <!-- place details -->
     </div>  <!-- search results -->
 
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsTceI0v76mesiBDi3kCnhi0r4-Q95MjY&libraries=places&callback=initMap" async defer></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsTceI0v76mesiBDi3kCnhi0r4-Q95MjY&libraries=places&callback=showUI" async defer></script>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="app.js"></script>
 
