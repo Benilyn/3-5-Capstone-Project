@@ -27,26 +27,38 @@ body {
 }
 
 .search-button:hover {
-  color: black;
+  color: gray;
 }
 
 #search-results {
   margin: auto;
+  text-content: center;
 }
 
 #map {
-  height: 400px;
-  width: 500px;
+  height: 60vh;
+  width: 45vw;
+  opacity: 0.8;
 }
 
 #place-details {
-  border-style: solid blue;
+  height: 60vh;
+  width: 45vw;
 }
 
 .inline {
   display: inline-block;
-  margin: 10px;
+  margin: auto;
   padding: 10px;
+}
+
+ul {
+  font-size: 40px;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
 }
 
   
