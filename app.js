@@ -8,7 +8,7 @@ $(document).ready(function(){
 }); //document.ready
 
 function showUI(){
-  $('.search-button').removeClass('hide');
+  $('.logo').removeClass('hide');
 }   //showUI
 
 var map;
