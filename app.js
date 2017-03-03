@@ -19,7 +19,7 @@ function initMap() {
     
     map = new google.maps.Map(document.getElementById('map'), {
       center: currentLocation,
-      zoom: 15
+      zoom: 13
     }); //map
 
     
@@ -62,8 +62,9 @@ function createMarker(place) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         infowindow.setContent(details.name);
         $('#place-details').append(
-          '<span>' + details.name + '</span><br>' + 
-          '<span>' + place.formatted_address + '</span>');
+          '<ul>' + details.name + '</ul>' + 
+          '<li>' + details.vicinity + '</li>' +
+          '<li>' + details.formatted_phone_number + '</li>');
       }
 
     });   //getDetails
