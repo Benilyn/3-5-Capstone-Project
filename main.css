@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto';
+  background-image: url("hotCoffee.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+.transparent {
+  background-color: transparent;
+  border: lightgray;
+}
+
+.hide {
+  display: none;
+}
+
+.search-button {
+  font-family: 'Playball';
+  font-size: 120px;
+  color: white;
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+.search-button:hover {
+  color: black;
+}
+
+#search-results {
+  margin: auto;
+}
+
+#map {
+  height: 400px;
+  width: 500px;
+}
+
+#place-details {
+  border-style: solid blue;
+}
+
+.inline {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
+
+  
+  
+  
+
+
+
+
