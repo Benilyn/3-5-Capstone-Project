@@ -26,19 +26,34 @@ function initMap() {
     var service = new google.maps.places.PlacesService(map);
     var query = {
       location: currentLocation,
-      radius: '1000',
-      query: 'coffee'
+      radius: '10',
+      keyword: 'coffee'
     };   //var query
     
-    service.textSearch(query, callback); //(textSearch)
+    service.radarSearch(query, callback); //(textSearch)
 
     function callback(results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         var coffeeShops = results.slice(0, 5);
+        console.log(coffeeShops);
         for (var i = 0; i < results.length; i++) {
           coffeeShops.forEach(createMarker);
         }   //for
       }   //if
+      else if (status === "ZERO_RESULTS") {
+          $('#place-details').addClass('detail-info');
+          $('#place-details').html(
+            '<div class="place-name">' + 'No search found nearby' + '</div>');
+      }   //else if
+      else {
+        if (status === google.maps.places.PlacesServiceStatus.UNKNOWN_ERROR) {
+          $('#place-details').addClass('detail-info');
+          $('#place-details').html(
+            '<div class="place-info">' + 
+            'We are currently doing our regular maintenance, please try again later' + 
+            '</div>');
+        }   //if inside else
+      }   //else
     }   //callback function
 
     var infoWINDOW;
