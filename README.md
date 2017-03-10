@@ -2,7 +2,7 @@
 
 ##Synopsis
 
-**_Find my Coffee_** is an app that allows user to search for coffee shops nearby their current location. It provides a map that will show the user their current location and coffee shops nearby. This app also provide you with the information about the coffee shop.
+**_Find my Coffee_** is an app that allows user to search for coffee shops nearby their current location. It provides a map that will show the user their current location and coffee shops nearby. This app also provides the user with the information about the coffee shop.
 
 ##Motivation
 
