@@ -2,7 +2,7 @@
 $(document).ready(function(){
   $('.logo').click(function(event){
     $(this).removeClass('click');
-    $('#search-results').removeClass('hide');
+    $('#please-wait').removeClass('hide');
     initMap();
   });   //click function
 }); //document.ready
@@ -26,16 +26,24 @@ function initMap() {
     var service = new google.maps.places.PlacesService(map);
     var query = {
       location: currentLocation,
-      radius: '10',
+      radius: '1000',
       keyword: 'coffee'
     };   //var query
     
-    service.radarSearch(query, callback); //(textSearch)
+    service.radarSearch(query, searchResults); //(textSearch)
+    var currentPosition = new google.maps.Marker({
+      position: currentLocation,
+      map: map,
+      label: 'You are here',
+    });
 
-    function callback(results, status) {
+    function searchResults(results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
+        $('#please-wait').addClass('hide');
+        $('#map').removeClass('hide');
+        console.log(currentLocation);
+        // currentLocation(createMarker);
         var coffeeShops = results.slice(0, 5);
-        console.log(coffeeShops);
         for (var i = 0; i < results.length; i++) {
           coffeeShops.forEach(createMarker);
         }   //for
@@ -43,7 +51,7 @@ function initMap() {
       else if (status === "ZERO_RESULTS") {
           $('#place-details').addClass('detail-info');
           $('#place-details').html(
-            '<div class="place-name">' + 'No search found nearby' + '</div>');
+            '<div class="place-name">' + 'No coffee found nearby' + '</div>');
       }   //else if
       else {
         if (status === google.maps.places.PlacesServiceStatus.UNKNOWN_ERROR) {
@@ -57,8 +65,8 @@ function initMap() {
     }   //callback function
 
     var infoWINDOW;
+    
     function createMarker(place) {
-      var placeLoc = place.geometry.location;
       var marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location,
