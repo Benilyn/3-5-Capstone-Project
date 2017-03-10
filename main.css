@@ -44,6 +44,20 @@ p {
   text-align: center;
 }
 
+#please-wait {
+  height: 10vw;
+  background-color: #dddddd;
+  margin: auto;
+  padding: 3%;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+  font-size: 40px;
+  width: 60vw;
+  color: darkslategray;
+  font-family: 'Playball';
+}
+
 #map {
   height: 60vh;
   margin-bottom: 5px; 
