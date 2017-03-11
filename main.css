@@ -45,7 +45,7 @@ p {
 }
 
 #please-wait {
-  height: 10vw;
+  height: 40vw;
   background-color: #dddddd;
   margin: auto;
   padding: 3%;
@@ -56,6 +56,10 @@ p {
   width: 60vw;
   color: darkslategray;
   font-family: 'Playball';
+}
+
+img {
+  padding-top: 10px;
 }
 
 #map {
