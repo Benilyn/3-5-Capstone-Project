@@ -18,16 +18,25 @@ body {
 }
 
 .click:hover {
-  color: lightgray;
+  color: blue;
   cursor: pointer;
 }
 
 .logo {
   font-family: 'Playball';
-  color: white;
-  width: 100%;
+  
+  
   font-size: 120px;  
-  border: none;
+}
+
+#intro {
+  margin: 15%;
+  width: 70%;
+  border: red;
+  border-style: double;
+  background-color: lightgray;
+  padding: auto;
+
 }
 
 #search-results {
@@ -37,11 +46,13 @@ body {
   text-content: center;
 }
 
-p {
-  font-size: 70px;
-  margin-bottom: 5px;
-  margin-top: 0px;
+button {
+  display: block;
+  margin: auto;
   text-align: center;
+  color: darkslategray;
+  border: none;
+  opacity: .8;
 }
 
 #please-wait {
