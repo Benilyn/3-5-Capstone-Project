@@ -1,14 +1,14 @@
 
 $(document).ready(function(){
-  $('.logo').click(function(event){
-    $(this).removeClass('click');
+  $('button').click(function(event){
+    $('#intro').addClass('hide');
     $('#please-wait').removeClass('hide');
     initMap();
   });   //click function
 }); //document.ready
 
 function showUI(){
-  $('.logo').removeClass('hide');
+  $('button').removeClass('hide');
 }   //showUI
 
 var map;
@@ -41,7 +41,7 @@ function initMap() {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         $('#please-wait').addClass('hide');
         $('#map').removeClass('hide');
-        console.log(currentLocation);
+      //  console.log(currentLocation);
         // currentLocation(createMarker);
         var coffeeShops = results.slice(0, 5);
         for (var i = 0; i < results.length; i++) {
