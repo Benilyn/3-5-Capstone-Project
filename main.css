@@ -24,8 +24,6 @@ body {
 
 .logo {
   font-family: 'Playball';
-  
-  
   font-size: 120px;  
 }
 
@@ -36,7 +34,6 @@ body {
   border-style: double;
   background-color: lightgray;
   padding: auto;
-
 }
 
 #search-results {
@@ -44,6 +41,7 @@ body {
   padding: 3%;
   padding-top: 0px;
   text-content: center;
+  height: 10%;
 }
 
 button {
