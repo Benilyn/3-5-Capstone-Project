@@ -72,30 +72,28 @@ img {
 }
 
 #map {
+  width: 60%;
   height: 60vh;
-  margin-bottom: 5px; 
 }
 
 #place-details {
+  width: : 40%;
   height: auto;
 }
 
 .detail-info {
   background-color: #dddddd;
-  margin-top: auto;
-  margin-bottom: auto;
   text-align: center;
   align-content: center;
 }
 
-.block {
-  display: block;
-  margin: auto;
-  padding: 10px;
-  border: lightgray;
+.inline {
+  position: fixed;
+  display: inline-block;
+  margin: auto; 
+  border: 1px solid black;
   border-radius: 5px;
   opacity: 0.8;
-  width: 60vw;
 }
 
 .place-name {
