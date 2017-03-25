@@ -39,7 +39,6 @@ body {
 #search-results {
   margin: auto;
   padding: 3%;
-  padding-top: 0px;
   text-content: center;
   height: 10%;
 }
@@ -76,34 +75,70 @@ img {
   height: 60vh;
 }
 
-#place-details {
-  width: : 40%;
-  height: auto;
+#results-list {
+  overflow: scroll;
+  width: 40%;
+  height: 60vh;
+  padding-top: auto;
+  padding-bottom: auto;
+  padding-left: 0;
+  padding-right: 0;
+  align-content: center;
+  background-color: #dddddd;
 }
 
-.detail-info {
-  background-color: #dddddd;
-  text-align: center;
-  align-content: center;
+.place-details {
+  width: : 100%;
+  height: auto;
+  border-bottom-style: groove;
+  list-style: none;
+  padding: 5px;
 }
 
 .inline {
   position: fixed;
   display: inline-block;
   margin: auto; 
-  border: 1px solid black;
-  border-radius: 5px;
   opacity: 0.8;
 }
 
-.place-name {
-  font-size: 40px;
+.radius {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.place-label {
+  color: red;
+  font-size: 30px;
+  width: 5%;
+  text-align: center;
 }
 
 .place-info {
-  font-size: 20px;
+  width: 90%
+  color: darkslategray;
+  border: none;
 }
 
+.name {
+  font-size: 20px;
+  padding: 3px;
+}
+
+.address .phone {
+  font-size: 12px;  
+}
+
+p {
+  text-align: center;
+  margin: 0;
+}
+
+
+.highlight {
+  background-color: lightblue;
+  opacity: 0.8;
+}
   
   
   
